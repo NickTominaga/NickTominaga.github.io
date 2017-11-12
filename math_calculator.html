@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html> 
+  
+  <head> 
+  
+    <meta charset="utf-8" /> 
+    <title>Math Calculator</title> 
+  
+    <!-- css -->
+    <link href="./css/button_design.css" rel="stylesheet" type="text/css">
+  
+    <!-- javascript -->
+    <script type="text/javascript" src="./js/insert_equation.js"></script>
+
+    <script type="text/javascript" src="./js/home_equation.js"></script>
+    <script type="text/javascript" src="./js/end_equation.js"></script>
+
+    <script type="text/javascript" src="./js/right_equation.js"></script>
+    <script type="text/javascript" src="./js/left_equation.js"></script>
+
+    <script type="text/javascript" src="./js/clear_equation.js"></script>
+    <script type="text/javascript" src="./js/delete_from_caret_equation.js"></script>
+    <script type="text/javascript" src="./js/backspace_from_caret_equation.js"></script>
+
+    <script type="text/javascript" src="./js/calculate_const_equation.js"></script>
+    <script type="text/javascript" src="./js/solve_const_equation.js"></script>
+
+  </head> 
+  
+  <body> 
+
+    <h1>Math Calculator</h1> 
+    
+    <label for="name">equation= </label>
+    <input type="text" size=56 id="equation" name="equation" value="" required>
+
+
+    <table class="table_button">
+      <tr>
+
+        <td>
+          <button class="calculator_button" onclick="insert_equation(' '); return false;"> space </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="home_equation('min'); return false;"> HOME </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="end_equation('max'); return false;"> END </button>
+        </td>
+
+        <td>
+          <button class="calculator_button" onclick="backspace_from_caret_equation(); return false;"> BS </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="delete_from_caret_equation(); return false;"> DEL </button>
+        </td>
+        <td colspan=2>
+          <button class="calculator_button" onclick="left_equation(); return false;"> <- </button>
+        </td>
+
+        <td colspan=2>
+          <button class="calculator_button" onclick="right_equation(); return false;"> -> </button>
+        </td>
+
+      </tr>
+
+      <tr>
+
+      <tr>
+
+        <td>
+          <button class="calculator_button" onclick="insert_equation('sum'); return false;"> sum </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('avg'); return false;"> avg </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('min'); return false;"> min </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('max'); return false;"> max </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('ans'); return false;"> ans </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('e'); return false;"> e </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('^'); return false;"> ^ </button>
+        </td>
+
+        <td colspan=2>
+          <button class="calculator_button" onclick="clear_equation(); return false;"> CLEAR </button>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td>
+          <button class="calculator_button" onclick="insert_equation('abs'); return false;"> abs </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('!'); return false;"> ! </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation(','); return false;"> , </button>
+        </td>
+
+        <td>
+          <button class="calculator_button" onclick="insert_equation('e+'); return false;"> e+ </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('e-'); return false;"> e- </button>
+        </td>
+
+        <td>
+          <button class="calculator_button" onclick="insert_equation('pi'); return false;"> pi </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('('); return false;"> ( </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation(')'); return false;"> ) </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('/'); return false;"> / </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('exp'); return false;"> exp </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('log2'); return false;"> log2 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('log10'); return false;"> log10 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('ln'); return false;"> ln </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('sqrt'); return false;"> sqrt </button>
+        </td>
+
+        <td>
+          <button class="calculator_button" onclick="insert_equation('7'); return false;"> 7 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('8'); return false;"> 8 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('9'); return false;"> 9 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('+'); return false;"> + </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('sin'); return false;"> sin </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('asin'); return false;"> asin </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('sinh'); return false;"> sinh </button>
+        </td>
+        <td colspan=2>
+          <button class="calculator_button" onclick="insert_equation('asinh'); return false;"> asinh </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('4'); return false;"> 4 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('5'); return false;"> 5 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('6'); return false;"> 6 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('-'); return false;"> - </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('cos'); return false;"> cos </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('acos'); return false;"> acos </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('cosh'); return false;"> cosh </button>
+        </td>
+        <td colspan=2>
+          <button class="calculator_button" onclick="insert_equation('acosh'); return false;"> acosh </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('1');"> 1 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('2');"> 2 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('3');"> 3 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('*');"> * </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('tan'); return false;"> tan </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('atan'); return false;"> atan </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('tanh'); return false;"> tanh </button>
+        </td>
+        <td colspan=2>
+          <button class="calculator_button" onclick="insert_equation('atanh'); return false;"> atanh </button>
+        </td>
+        <td colspan=2>
+          <button class="calculator_button" onclick="insert_equation('0'); return false;"> 0 </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="insert_equation('.'); return false;"> . </button>
+        </td>
+        <td>
+          <button class="calculator_button" onclick="solve_const_equation(); return false;"> = </button>
+        </td>
+      </tr>
+
+
+    </table>
+
+    output log 
+    <div id="output">
+      <textarea id="output_log" name="output_log" cols="50" rows="5" readonly style="overflow:auto"></textarea>
+    </div>
+
+
+    <HR>
+          usage:
+      <ul>
+        <li>
+          example of typical function:
+        </li>
+         sin(2/pi) = 1 (this calculator always shows radian result)
+         <br>
+         sin(2*pi) = -2.4492935982947064e-16 (nearly zero)
+
+         <br>
+         <br>
+
+        <li>
+         example of non-typical function(sum, avg, min, max):
+        </li>
+         sum(1,2,3) = 6 (use , (comma))
+
+         <br>
+         <br>
+
+        <li>
+         example of binary operators:
+        </li>
+         1 &lt; 0 = 1 (0 is true, 1 is false)
+         <br>
+         regarding binary operators, see following link.
+
+         <br>
+         <br>
+
+         this calculator's parser is muparser, C++ code was compiled by emscripten.
+         <br>
+         see detail on
+         <a href="http://muparser.beltoforion.de/mup_features.html#idDef3">muparser: Predefined Operators and Functions</a>
+      </ul>
+
+
+      
+    
+    <HR>
+    <a href="http://NickTominaga.github.io/">top</a>
+    <a href="http://NickTominaga.github.io/numerical_science_tools.html">numerical science tools</a>
+    <HR>
+  </body> 
+
+</html> 
+

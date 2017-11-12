@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html> 
+  
+  <head> 
+  
+    <meta charset="utf-8" /> 
+    <title>ordinary differential equation</title> 
+  
+    <!-- css -->
+    <link href="./css/nv.d3.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/chart_svg.css" rel="stylesheet" type="text/css">
+  
+    <!-- javascript -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/nv.d3.min.js"></script>
+
+    <script type="text/javascript" src="./js/odeint_euler_solver.js"></script>
+    <script type="text/javascript" src="./js/solve_ode_euler.js"></script>
+
+		<script type="text/javascript" src="./js/get_x_demo_array.js"></script>
+		<script type="text/javascript" src="./js/get_y_demo_array.js"></script>
+		<script type="text/javascript" src="./js/show_odeint_chart.js"></script>
+
+    <script>
+    	window.onload = function()
+        {
+          var demo_x_array = [];
+          var demo_y_array = [];
+          demo_x_array = get_x_demo_array('euler');
+          demo_y_array = get_y_demo_array('euler');
+
+          var example_output_form = document.getElementById("demo_result_textarea");
+
+          // clean up output text box
+          example_output_form.value = "";
+          // make header at output text box
+          example_output_form.value = "x, y";
+          example_output_form.value += "\n";
+
+
+          for (var i=0 in demo_x_array)
+          {
+            var result_text = String(demo_x_array[i]) + ", " + String(demo_y_array[i]);
+            example_output_form.value += result_text;
+            example_output_form.value += '\n';
+          }
+
+    		};
+    </script>
+  
+  </head> 
+  
+  <body> 
+
+    <h1>Solve Ordinary Differential Equation (ODE) : Euler's Method</h1> 
+    
+    <HR>
+    Engine: Boost odeint <a href="http://www.boost.org/">http://www.boost.org/</a> 
+    <br></br>
+    Compiler: emscripten <a href="https://kripken.github.io/emscripten-site">https://kripken.github.io/emscripten-site</a>
+    <HR>
+
+    example: 
+    <br></br>
+    equation: \(y' = cos(x)\)
+    <br></br>
+    initial x: 0.0
+    <br></br>
+    initial y: 0.0
+    <br></br>
+    final x: 20.0
+    <br></br>
+    dx: 0.1
+    <br></br>
+
+    result:
+    <br></br>
+    Analytic solution is \(y = sin(x)\)
+    <br></br>
+
+    numerical solution: output data (you can use it for your plotting tool)
+    <div id="demo_result_text">
+      <textarea id="demo_result_textarea" name="demo_result_textarea" cols="50" rows="5" readonly style="overflow:auto">
+      </textarea>
+    </div>
+
+    <div>
+       <button onclick="show_odeint_chart('euler', 'demo_result'); return false;">show graph</button>
+    </div>
+
+    <div id=demo_result_graph> 
+    </div>
+
+    <HR>
+
+    <br></br>
+
+    <label for="name">equation y'=</label>
+    <input type="text" id="ode_equation" name="equation" value="cos(x)" required><br>
+    <label for="name">initial x =</label>
+    <input type="text" id="initial_x" name="initial_x" value=0.0 required><br>
+    <label for="name">initial y =</label>
+    <input type="text" id="initial_y" name="initial_y" value=0.0 required><br>
+    <label for="name">final x =</label>
+    <input type="text" id="final_x" name="final_x" value=20.0 required><br>
+    <label for="name">dx =</label>
+    <input type="text" id="dx" name="dx" value=0.1 required><br>
+
+    <div>
+       <button onclick="solve_euler(); return false;">solve</button>
+    </div>
+
+    output data 
+    <div id="user_result_text">
+      <textarea id="user_result_textarea" name="user_result_textarea" cols="50" rows="5" readonly style="overflow:auto"></textarea>
+    </div>
+
+    <div>
+       <button onclick="show_odeint_chart('euler', 'user_result'); return false;">show graph</button>
+    </div>
+
+  	<div id=user_result_graph> 
+    </div>
+    
+    <HR>
+    <a href="http://NickTominaga.github.io/">top</a>
+    <a href="http://NickTominaga.github.io/numerical_science_tools.html">numerical science tools</a>
+    <HR>
+  </body> 
+
+</html> 
+

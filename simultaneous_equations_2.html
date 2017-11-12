@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html> 
+  
+  <head> 
+
+    <meta charset="utf-8" /> 
+    <title>solve simultaneous linear equations in 2 variables</title> 
+  
+    <!-- css -->
+  
+    <!-- javascript -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
+    <script type="text/javascript" src="./js/simultaneous_equations_solver.js"></script>
+    <script type="text/javascript" src="./js/solve_simultaneous_equations_xyz.js"></script>
+  
+  </head> 
+  
+  <body> 
+
+    <h1>solve simultaneous linear equations in 2 variables</h1> 
+    
+    <HR>
+    Engine: Boost uBLAS <a href="http://www.boost.org/">http://www.boost.org/</a>
+    <HR>
+
+    example:
+    <br></br>
+    \(x + 4y = 3\)
+    <br></br>
+    \(2x + 5y = 9\)
+    <br></br>
+
+    result(x, y):
+    <br></br>
+     7, -1
+    <br></br>
+
+    <HR>
+    
+    <FORM><INPUT type="text" size="5" name="matrix" value=1>\(x + \)
+    <FORM><INPUT type="text" size="5" name="matrix" value=4>\(y = \)
+    <FORM><INPUT type="text" size="5" name="matrix" value=3>
+    <br></br>
+    <FORM><INPUT type="text" size="5" name="matrix" value=2>\(x + \)
+    <FORM><INPUT type="text" size="5" name="matrix" value=5>\(y = \)
+    <FORM><INPUT type="text" size="5" name="matrix" value=9>
+    <br></br>
+    
+    <div>
+       <button onclick="solve_simultaneous_equations_xyz(3, matrix); return false;">solve</button>
+    </div>
+
+    <br></br>
+      
+      result(x, y):
+    <div id="result">
+    </div>
+
+    <br></br>
+	
+    <HR>
+    <a href="http://NickTominaga.github.io/">top</a>
+    <a href="http://NickTominaga.github.io/numerical_science_tools.html">numerical science tools</a>
+    <HR>
+    
+  </body> 
+
+</html> 
+

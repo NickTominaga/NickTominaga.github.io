@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html> 
+  
+  <head> 
+  
+    <meta charset="utf-8" /> 
+    <title>solve simultaneous linear equations in n variables</title> 
+  
+    <!-- css -->
+  
+    <!-- javascript -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
+    <script type="text/javascript" src="./js/simultaneous_equations_solver.js"></script>
+    <script type="text/javascript" src="./js/solve_simultaneous_equations.js"></script>
+    <script type="text/javascript" src="./js/add_equation.js"></script>
+  
+  </head> 
+  
+  <body> 
+
+    <h1>solve simultaneous linear equations in n variables</h1> 
+
+    <HR>
+    Engine: Boost uBLAS <a href="http://www.boost.org/">http://www.boost.org/</a>
+    <HR>
+    
+    <HR>
+
+    example:
+    <br></br>
+    \(x_1 + 4x_2 = 3\)
+    <br></br>
+    \(2x_1 + 5x_2 = 9\)
+    <br></br>
+
+    result(\(x_1\),\( x_2\)):
+    <br></br>
+     7, -1
+    <br></br>
+
+    <HR>
+    
+    <div id="equation">
+      <FORM><INPUT type="text" size="5" name="matrix" value=1>\(x_1 + \)
+      <FORM><INPUT type="text" size="5" name="matrix" value=4>\(x_2 = \)
+      <FORM><INPUT type="text" size="5" name="matrix" value=3>
+      <br></br>
+      <FORM><INPUT type="text" size="5" name="matrix" value=2>\(x_1 + \)
+      <FORM><INPUT type="text" size="5" name="matrix" value=5>\(x_2 = \)
+      <FORM><INPUT type="text" size="5" name="matrix" value=9>
+      <br></br>
+    </div>
+    
+    <div>
+       <button onclick="add_equation(); return false; ">add equation</button>
+    </div>
+
+    <div>
+       <button onclick="solve_simultaneous_equations(); return false;">solve</button>
+    </div>
+
+    <br></br>
+      
+    <div id="result_header">
+      result(\(x_1\),\( x_2\)):
+    </div>
+    <div id="result">
+    </div>
+
+    <br></br>
+
+    
+  </body> 
+
+</html> 
+
+    </div>
+
+    <div id="result">
+    </div>
+    
+	    <HR>
+    <a href="http://NickTominaga.github.io/">top</a>
+    <a href="http://NickTominaga.github.io/numerical_science_tools.html">numerical science tools</a>
+    <HR>
+	
+  </body> 
+
+</html> 
+
