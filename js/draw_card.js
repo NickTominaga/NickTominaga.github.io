@@ -173,6 +173,17 @@ function monte_curry()
 
     var example_output_form = document.getElementById("user_result_textarea");
 
+    var result_text = document.getElementById("same_or_not");
+
+    if (exist_same_value(result))
+    {
+        result_text.innerHTML = "だぶった！";
+    }
+    else
+    {
+        result_text.innerHTML = "だぶりなし";
+    }
+
     example_output_form.value = "";
 
     for (var i=0 in result_array)
