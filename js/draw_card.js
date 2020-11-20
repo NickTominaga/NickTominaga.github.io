@@ -164,7 +164,7 @@ function monte_curry()
     result = buy_card(parseInt(bought_n));
     console.log(result.sort());
 
-    for (var i = 0; i < 30; i++) 
+    for (var i = 0; i < bought_n; i++) 
     {
         result_array.push(character_list[result[i]]);
     }
@@ -172,6 +172,8 @@ function monte_curry()
     //console.log("exist? ", exist_same_value(result));
 
     var example_output_form = document.getElementById("user_result_textarea");
+
+    example_output_form.value = "";
 
     for (var i=0 in result_array)
     {
