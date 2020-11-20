@@ -164,7 +164,7 @@ function monte_curry()
     result = buy_card(parseInt(bought_n));
     console.log(result.sort());
 
-    for (var i = 0; i < bought_n; i++) 
+    for (var i = 0; i < bought_n*3; i++) 
     {
         result_array.push(character_list[result[i]]);
     }
