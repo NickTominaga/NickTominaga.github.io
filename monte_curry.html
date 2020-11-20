@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html> 
+  
+  <head> 
+
+    <meta charset="utf-8" /> 
+    <title>monte curry simulation</title> 
+  
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+    <!-- javascript -->
+    <script type="text/javascript" src="./js/draw_card.js"></script>
+  
+  </head> 
+  
+  <body> 
+
+    <h1>monte curry simulation</h1> 
+    
+    何セット買う？<input id="bought_number" type="text" size="5" name="bought" value=10>
+
+    <br></br>
+    <div>
+       <button onclick="monte_curry(); return false;">開封！</button>
+    </div>
+
+    <br></br>
+      
+      開封結果:
+    <div id="user_result_text">
+      <textarea id="user_result_textarea" name="user_result_textarea" cols="50" rows="50" readonly style="overflow:auto"></textarea>
+    </div>
+
+    <br></br>
+	
+    <HR>
+    <a href="http://NickTominaga.github.io/">top</a>
+    <a href="http://NickTominaga.github.io/numerical_science_tools.html">numerical science tools</a>
+    <HR>
+    
+  </body> 
+
+</html> 
+
